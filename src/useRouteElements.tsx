@@ -13,7 +13,11 @@ export default function useRouteElements() {
     },
     {
       path: '/login',
-      element: <Login />
+      element: (
+        <RegisterLayout>
+          <Login />
+        </RegisterLayout>
+      )
     },
     {
       path: '/register',
