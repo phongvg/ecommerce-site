@@ -1,13 +1,19 @@
-import React from 'react'
+import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 
 export default function Login() {
+  const { handleSubmit } = useForm()
+
+  const onSubmit = handleSubmit((data) => {
+    console.log(data)
+  })
+
   return (
     <div className='bg-primary'>
       <div className='max-w-7xl mx-auto px-4'>
         <div className='grid grid-cols-1 py-10 lg:grid-cols-5 lg:py-30 lg:pr-10'>
           <div className='lg:col-span-2 lg:col-start-4'>
-            <form className='p-10 rounded bg-white shadow-sm'>
+            <form className='p-10 rounded bg-white shadow-sm' onSubmit={onSubmit}>
               <div className='text-2xl'>Đăng Nhập</div>
               <div className='mt-5'>
                 <input
