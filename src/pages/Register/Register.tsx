@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-import { rules } from '../../utils/rules'
+import { rules } from '~/utils/rules'
 
 interface FormData {
   email: string
@@ -31,7 +31,7 @@ export default function Register() {
                   type='email'
                   className='p-3 w-full ouline-none border border-gray-300 focus:border-gray-400 rounded-sm focus:shadow-sm'
                   placeholder='Nhập địa chỉ email của bạn'
-                  {...register('email', rules)}
+                  {...register('email', rules.email)}
                 />
                 <div className='m-1 text-red-600 min-h-[1.25rem] text-sm'>{errors.email?.message}</div>
               </div>

@@ -6,7 +6,7 @@ interface FormData {
   confirm_password: string
 }
 
-type Rules = { [key in keyof FormData]?: RegisterOptions }
+type Rules = { [key in keyof FormData]?: RegisterOptions<FormData, key> }
 
 export const rules: Rules = {
   email: {
